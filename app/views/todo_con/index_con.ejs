@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo con</title>
+    <style>
+        td, th
+        {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+   
+    <h1>Get All Todo con</h1>
+
+
+    <form action="/todo" method="get">
+        <input type="text" name="title" placeholder="Enter title">
+        <button type="submit">Search</button>
+    </form>
+    <br>
+    <table border="1" cellpadding="0" cellspacing="0">
+        <tr>
+            <th>ID</th>
+            <th>name plsyer</th>
+            <th>height</th>
+            <th>luc sut</th>
+            <th>belong</th>
+            <th>Action</th>
+        </tr>
+        <% todos.forEach((item) => { %>
+            <tr>
+                <td><%= item.id %></td>
+                <td><%= item.ten_cau_thu %></td>
+                <td><%= item.chieu_cao %></td>
+                <td><%= item.luc_sut %></td>
+                <td><%= item.type_id%> </td>
+                <td>
+                    <a href="/todo_con/edit_con/<%= item.id %>" onclick="return confirm('Bạn có chắc chắn muốn thay đổi không?')">Edit</a>
+                    <br>
+                    <a href="/todo_con/delete_con/<%= item.id %>" onclick="return confirm('Bạn có chắc chắn muốn xóa không?')">Delete</a>
+                    
+                </td>
+            </tr>
+        <% }) %>
+    </table>
+
+</body>
+</html>

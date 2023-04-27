@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>edit</h2>
+    <%if(typeof status !== 'undefined'){%>
+        <%if(status =='success'){ %>
+            <div style="color:green;">
+                update successfully
+            </div>
+        <%} else{%>
+            <div style="color: red;">
+                some err occurred while editing the todo
+            </div>
+        <%}%>
+        <br>
+    <%}%>
+
+    <form action="/todo_con/<%= todo_con.id %>" method="post">
+        <input type="hidden" name="_method" value="put">
+        <label for="title" >name player</label>
+        <input type="text" id="ten_cau_thu" name="ten_cau_thu" value="<%= todo_con.ten_cau_thu%>">
+        <br>
+        <label for="description">height</label>
+        <input type="number" name="chieu_cao" id="description" value="<%= todo_con.chieu_cao%>" >
+        <br>
+        <label for="description">shoot</label>
+        <input type="number" name="luc_sut" id="" value="<%= todo_con.luc_sut%>" >
+        <br>
+        <!-- gia trị đưa lên khác nên phải code thêm 1 xíu ở bên file todo,controller -->
+        <label for=""> type_id</label>
+        <input type="number" name="type_id" value="<%= todo_con.type_id%>">
+    
+        <br>
+        <input type="submit" name="" id="" value="submit">
+    </form>
+ 
+</body>
+</html>

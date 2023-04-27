@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        .search-container {
+            display: flex;
+            align-items: center;
+          }
+          
+          input[type=text] {
+            padding: 10px;
+            border: none;
+            font-size: 16px;
+          }
+          
+          button[type=submit], button[type=reset] {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+          }
+          
+          button[type=submit]:hover, button[type=reset]:hover {
+            background-color: #45a049;
+          }
+    </style>
+</head>
+<body>
+    <h1>hello <%= user.name%></h1>
+    <div class="search-container">
+        <input type="text" placeholder="Nhập từ khóa cần tìm kiếm" name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+        <button type="reset"><i class="fa fa-times"></i></button>
+    </div>
+    <script>
+        const searchInput = document.querySelector('input[name="search"]');
+        const searchButton = document.querySelector('button[type="submit"]');
+        const resetButton = document.querySelector('button[type="reset"]');
+
+        searchButton.addEventListener('click', () => {
+        const searchTerm = searchInput.value;
+        // Thực hiện tìm kiếm với searchTerm
+        });
+
+        resetButton.addEventListener('click', () => {
+        searchInput.value = '';
+        // Xóa kết quả tìm kiếm và đưa con trỏ về input
+        searchInput.focus();
+        });
+    </script>
+</body>
+</html>
